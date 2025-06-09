@@ -241,7 +241,7 @@ Das startet die App unter: [http://localhost:5173](http://localhost:5173)
 
 Da wir als relative Anfänger innerhalb einer Woche ein komplettes Frontend-Projekt abliefern mussten, kamen während des Programmierens einige Fragestellungen auf. Da mit KI ein mächtiges Tool zur Verfügung steht, habe ich auch KI benutzt. Hierzu meine Quellenangaben und Prompts, mit denen die KI gefüttert wurde:
 
-- Das Design, sprich CSS, der Seite wurde weitgehend von einer KI (ChatGPT) übernommen, da der Fokus bei diesem Projekt auf die Logik gelegt wurde und das Erlernen von React. Ich habe die KI mit Prompts gefüttert, wie die Web-App optisch auszusehen hat. Ich finde, man sollte KI in die Entwicklung mit einbeziehen, da man so mehr den Fokus auf ...
+- Das Design, sprich CSS, der Seite wurde weitgehend von einer KI (ChatGPT) übernommen, da der Fokus bei diesem Projekt auf die Logik gelegt wurde und das Erlernen von React. Ich habe die KI mit Prompts gefüttert, wie die Web-App optisch auszusehen hat. Ich finde, man sollte KI in die Entwicklung mit einbeziehen, da man so moderne Technologien effizient kombiniert und sich stärker auf die Kernfunktionen konzentrieren kann.
 
 - Vieles vom Basiswissen, wie die Grundstruktur, Komponenten usw., konnte ich innerhalb des Unterrichts mit Mitschülern und Lehrperson erlernen und selbstständig einsetzen.
 
