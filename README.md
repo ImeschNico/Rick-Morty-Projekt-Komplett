@@ -208,4 +208,13 @@ Die API liefert JSON-Objekte mit Eigenschaften wie Name, Status, Spezies, Geschl
 
 ## Testfall 1:
 
+![test1](rick-morty/public/docs/images/Test1.png)
+
+## Testfall 2-4:
+
+![test2-4](rick-morty/public/docs/images/test2-4.png)
+
+## Testfall 5:
+
+![test5](rick-morty/public/docs/images/test5.png)
 
