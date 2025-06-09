@@ -73,4 +73,9 @@ Als Nutzer will ich, einfach zwischen den Seiten navigieren können, damit ich d
 • Fehlerhandling und Validierung bei Benutzereingaben (z.B. bei Favoritenverwaltung)  
 • Anzeige eines Impressums als statische Informationsseite
 
-![Klassendiagramm Pages](rick-morty/public/docs/images/Klassendiagramm-Pages.png)
+
+## Klassendiagramme:
+
+### Klassendiagramm Pages:
+
+![Klassendiagramm-Pages](rick-morty/public/docs/images/Klassendiagramm-Pages.png)
