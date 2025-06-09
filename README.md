@@ -218,3 +218,55 @@ Die API liefert JSON-Objekte mit Eigenschaften wie Name, Status, Spezies, Geschl
 
 ![test5](rick-morty/public/docs/images/test5.png)
 
+---
+
+## Installation
+
+- Repository klonen: [https://github.com/ImeschNico/React-Projektarbeit-Rick-Morty-Game-.git](https://github.com/ImeschNico/React-Projektarbeit-Rick-Morty-Game-.git)  
+- In den Projektordner wechseln: `cd <Projektordner>`
+
+### Abhängigkeiten installieren:
+
+- `npm install`
+
+### Entwickler-Server starten:
+
+- `npm run dev`
+
+Das startet die App unter: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## Hilfestellungen
+
+Da wir als relative Anfänger innerhalb einer Woche ein komplettes Frontend-Projekt abliefern mussten, kamen während des Programmierens einige Fragestellungen auf. Da mit KI ein mächtiges Tool zur Verfügung steht, habe ich auch KI benutzt. Hierzu meine Quellenangaben und Prompts, mit denen die KI gefüttert wurde:
+
+- Das Design, sprich CSS, der Seite wurde weitgehend von einer KI (ChatGPT) übernommen, da der Fokus bei diesem Projekt auf die Logik gelegt wurde und das Erlernen von React. Ich habe die KI mit Prompts gefüttert, wie die Web-App optisch auszusehen hat. Ich finde, man sollte KI in die Entwicklung mit einbeziehen, da man so mehr den Fokus auf ...
+
+- Vieles vom Basiswissen, wie die Grundstruktur, Komponenten usw., konnte ich innerhalb des Unterrichts mit Mitschülern und Lehrperson erlernen und selbstständig einsetzen.
+
+### Auszug von Prompts, welche ich benutzt habe:
+
+- **Prompt für das CSS Design:**  
+  *Gestalte mir ein optisch ansprechendes und modernes CSS File, welches an dieser Seite: [https://rickandmortyapi.com/](https://rickandmortyapi.com/) (die Hauptseite der API) angelehnt ist.*  
+  → Somit hatte ich ein Grundgerüst, das die Charaktere der Web-App ähnlich anzeigt wie auf der Rick & Morty API.
+
+- Uns wurde ein `localStorage.js` von der Lehrperson abgegeben, welches wir noch auf unser Projekt anpassen mussten. Diese `localStorage.js` wurde als Übergangslösung verwendet, da im nächsten Modul (Backend) behandelt wird, wird der Local Storage obsolet. Deshalb habe ich hier Hilfe der KI in Anspruch genommen.  
+  **Prompt:**  
+  *Ich habe ein localStorage.js von der Lehrperson erhalten. Bitte hilf mir zu verstehen, was es macht und was ich anpassen muss, damit es auf mein Projekt abgestimmt ist.*  
+  → Dadurch habe ich ein richtiges File `localStorage.js` bekommen und konnte so nachvollziehen, was gemacht werden muss.
+
+- Bei der Einbindung der API kam ich an mehreren Punkten nicht weiter. Zunächst waren die ersten beiden APIs, die ich benutzte, nicht geeignet. Da ich als Erstes eine Fußball-Team-Builder-App entwickeln wollte, habe ich nach passenden APIs gesucht und vermeintlich gefunden. Ich habe das Grundkonzept erstellt und die API eingebunden, doch die Daten waren fehlerhaft und nicht vollständig. Deshalb musste ich auf eine andere API setzen. Durch die Lehrperson wurden einige Gratis-APIs vorgelegt, jedoch war nichts dabei, was ich umsetzen wollte. Deshalb habe ich die KI gefragt, ob sie mir passende APIs vorschlagen kann.  
+  **Prompt:**  
+  *Durchsuche das Internet nach einer API, welche ich für mein Projekt benutzen kann, möglichst kostenlos. Sie sollte Daten ähnlich wie diese API zeigen: https://web.dragonball-api.com/*  
+  → Die KI schlug mir unter vielen anderen die Rick & Morty API vor, welche ich dann benutzt habe.
+
+- Auch bei der Einbindung mit der richtigen API kam ich an einem Punkt nicht weiter. Die Lehrperson gab uns im Unterricht ein Beispiel für die Einbindung der API. Diese hat geholfen, das Konzept zu verstehen, jedoch wusste ich nicht, wie ich das umsetzen sollte. Deshalb habe ich die KI um Unterstützung gefragt.  
+  **Prompt:**  
+  *Hilf mir zu verstehen, wie ich die API richtig in die Web-App einbinden kann. Im Unterricht haben wir mit axios gearbeitet. Erkläre mir die Schritte, die wir machen.*  
+  → Daraus hat die KI (ChatGPT) mir ein `api.js` erstellt und mir erklärt, was wann gemacht werden muss.
+
+- Für das Testing haben wir im Unterricht von der Lehrperson eine Dokumentation über das Testen mit Vitest bekommen. Jedoch hatte ich Probleme, das in die Praxis umzusetzen, und habe mir mittels KI bei den Tests helfen lassen.  
+  **Prompt:**  
+  *Hilf mir, 5 Testfälle, welche ich schon erstellt habe, mithilfe von Vitest zu testen.*  
+  → Die KI hat mir dann Komponenten-Tests vorgeschlagen und geholfen, sie zu implementieren.
