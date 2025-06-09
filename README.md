@@ -94,5 +94,44 @@ Als Nutzer will ich, einfach zwischen den Seiten navigieren können, damit ich d
 
 ## Storyboard:
 
-### 
+### StoryBoard:
 
+![StoryBoard](rick-morty/public/docs/images/StoryBoard.png)
+
+---
+
+## Screen Mockups:
+
+### Screen Mockups:
+
+![Mock-Ups](rick-morty/public/docs/images/Mock-Ups.png)
+
+---
+
+## REST-API Schnittstelle:
+In diesem Projekt wurde die REST-API von https://rickandmortyapi.com/ verwendet. Über HTTP-GET-Anfragen wurden die Daten zu Charakteren abgerufen.
+Besonders verwendet wurden die Endpunkte /api/character (für die Liste) und /api/character/:id (für Details).
+Die API liefert JSON-Objekte mit Eigenschaften wie Name, Status, Spezies, Geschlecht und Bild-URL, welche in der Anwendung angezeigt und verarbeitet werden.
+
+### Verwendete Endpunkte:
+| Methode | Endpunkt           | Beschreibung                              |
+|---------|--------------------|-----------------------------------------|
+| GET     | /api/character     | Gibt eine Liste aller Charaktere zurück |
+| GET     | /api/character/:id | Gibt Detaildaten zu einem spezifischen Charakter |
+
+---
+
+### Beispiel JSON-Antwort:
+```json
+{
+  "id": 1,
+  "name": "Rick Sanchez",
+  "status": "Alive",
+  "species": "Human",
+  "gender": "Male",
+  "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+  "origin": {
+    "name": "Earth (C-137)",
+    "url": "https://rickandmortyapi.com/api/location/1"
+  }
+}
