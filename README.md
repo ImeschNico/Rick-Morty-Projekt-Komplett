@@ -27,7 +27,8 @@ Als Benutzer der Rick & Morty App, will ich einen Überblick über alle Rick & M
 **Akzeptanzkriterien:**  
 - Die Daten werden richtig von der Rick & Morty API geladen.  
 - Jede Charakterkarte zeigt Name, Bild und Status (lebendig/tot/unbekannt).  
-- Der Nutzer kann durch die Liste scrollen oder durch Seiten blättern.  
+- Der Nutzer kann durch die Liste scrollen oder durch Seiten blättern.
+  
 **Definition of Done:**  
 - Alle Akzeptanzkriterien wurden erfüllt.  
 - Der Code wurde überprüft.  
@@ -41,7 +42,8 @@ Als Fan der Serie Rick & Morty, will ich spielerisch meine Lieblingscharaktere a
 - Unter dem Punkt Game kann man Charaktere als Favorit hinzufügen.  
 - Ein Klick fügt den Charakter hinzu oder entfernt ihn.  
 - Die Favoriten werden im local storage gespeichert.  
-- Eine Seite nur mit zeigt alle favorisierten Charaktere an.  
+- Eine Seite nur mit zeigt alle favorisierten Charaktere an.
+  
 **Definition of Done:**  
 - Alle Akzeptanzkriterien sind erfüllt  
 - Der Code wurde überprüft.  
@@ -55,7 +57,8 @@ Als Nutzer will ich, einfach zwischen den Seiten navigieren können, damit ich d
 - Eine Navigationsgeräte oder ein Header ist auf allen Seiten zu sehen  
 - Ein Klick auf Charaktere zeigt sie Seite mit den Charakteren  
 - Ein Klick auf Game zeigt die Seite mit dem Spiel  
-- Ein Klick auf Favoriten zeigt alle Favoriten  
+- Ein Klick auf Favoriten zeigt alle Favoriten
+  
 **Definition of Done:**  
 - Alle Akzeptanzkriterien wurden erfüllt  
 - Der Code wurde überprüft  
