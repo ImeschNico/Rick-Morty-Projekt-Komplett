@@ -5,29 +5,33 @@ import { loadFavoriteChar, saveFavoriteChar } from "../data/localstorage";
 import { Status } from "../components/status";
 
 export const Game = () => {
-  const [char, setChar] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [char, setChar] = useState(null); //State für den aktuell angezeigten Char
+  const [loading, setLoading] = useState(true); //State für Ladestatus
+  const [error, setError] = useState(null); //State für Error
 
+  //Funktion um ein zufälligen Char zu Laden
   const loadNewChar = async () => {
     setLoading(true);
     try {
-      const data = await fetchRandomCharakter();
-      setChar(data);
+      const data = await fetchRandomCharakter(); //API aufrufen um Char zu laden
+      setChar(data); //Char in data speichern
     } catch (error) {
-      setError(error.message);
+      setError(error.message); //Wenn API nicht geht Fehler in State speichern
     } finally {
       setLoading(false);
     }
   };
+  // useEffect Hook: Lädt einmal beim ersten Rendern einen Charakter
   useEffect(() => {
     loadNewChar();
   }, []);
 
+  //Funktion einen Char als Fav zu speichern
   const addToFavorites = (character) => {
+    //Favs aus localStorage laden
     const currentFavorites = loadFavoriteChar();
 
-    //wird nur hinzugefügt wenn noch nicht vorhanden
+    //wird nur hinzugefügt wenn noch nicht vorhanden in Fav
     const isAlreadyFavorite = currentFavorites.some(
       (fav) => fav.id === character.id
     );
@@ -42,12 +46,13 @@ export const Game = () => {
     }
   };
 
+  //Funktion die aufgerufen wenn LIke oder Disslike
   const handleVote = (choice) => {
     console.log(`Du hast ${choice} für ${char.name} gewählt`);
     if (choice === "Like") {
-      addToFavorites(char);
+      addToFavorites(char); //IN Favs speichern
     }
-    loadNewChar();
+    loadNewChar(); //Immer neuen Char laden
   };
 
   return (

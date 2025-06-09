@@ -4,17 +4,21 @@ import { Button } from "../components/button";
 import { Status } from "../components/status";
 
 export const Favoriten = () => {
+  //Zustand der Fav liste
   const [favorites, setFavorites] = useState([]);
 
+  // useEffect Hook: Lädt die Favoriten einmal beim ersten Rendern aus dem LocalStorage
   useEffect(() => {
-    const favs = loadFavoriteChar();
-    setFavorites(favs);
-  }, []);
+    const favs = loadFavoriteChar(); //Favs aus localstorage laden
+    setFavorites(favs); //Zustand mit favs aktualisieren
+  }, []); // Leeres Array sorgt dafür, dass es nur einmal beim Mount ausgeführt wird
 
+  //Funktion zum entfernen der Chars
   const removeFav = (char) => {
-    const updatedFavorites = favorites.filter((fav) => fav.id !== char.id);
-    setFavorites(updatedFavorites);
-    saveFavoriteChar(updatedFavorites);
+    // Filtert den Charakter mit der passenden ID aus der Favoritenliste heraus
+    const updatedFavorites = favorites.filter((fav) => fav.id !== char.id); //eine neue Liste ohne den Charakter, den du gerade löschen möchtest.
+    setFavorites(updatedFavorites); //Zustand aktualisiert
+    saveFavoriteChar(updatedFavorites); //speichern der aktualisierten Liste wieder in localstorage
   };
 
   return (

@@ -10,7 +10,7 @@ export const Layout = () => {
       </header>
 
       <main className="layout-main-content">
-        <Outlet />
+        <Outlet /> {/*Platzhalter aus React Router*/}
       </main>
 
       <footer className="layout-footer">

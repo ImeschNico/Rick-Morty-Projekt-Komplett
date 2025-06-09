@@ -6,6 +6,7 @@ import { Charaktere } from "./Pages/Charaktere";
 import { Game } from "./Pages/Game";
 import { Favoriten } from "./Pages/Favoriten";
 import { Impressum } from "./Pages/Impressum";
+import { PageNotFound } from "./Pages/PageNotFound";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/game" element={<Game />} />
         <Route path="/favors" element={<Favoriten />} />
         <Route path="/impressum" element={<Impressum />} />
+        <Route path="/*" element={<PageNotFound />} />
       </Route>
     </Routes>
   );

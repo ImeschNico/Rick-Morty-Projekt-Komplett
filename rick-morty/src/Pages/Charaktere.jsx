@@ -4,6 +4,7 @@ import { Button } from "../components/button";
 import { Status } from "../components/status";
 
 export const Charaktere = () => {
+  //Zustände
   const [chars, setChars] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
