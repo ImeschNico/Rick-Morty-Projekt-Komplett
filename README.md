@@ -119,7 +119,6 @@ Die API liefert JSON-Objekte mit Eigenschaften wie Name, Status, Spezies, Geschl
 | GET     | /api/character     | Gibt eine Liste aller Charaktere zurück |
 | GET     | /api/character/:id | Gibt Detaildaten zu einem spezifischen Charakter |
 
----
 
 ### Beispiel JSON-Antwort:
 ```json
@@ -135,3 +134,71 @@ Die API liefert JSON-Objekte mit Eigenschaften wie Name, Status, Spezies, Geschl
     "url": "https://rickandmortyapi.com/api/location/1"
   }
 }
+```
+
+## Erklärung der Datenstruktur:
+- id: Eindeutige ID des Charakters
+- name: Name des Charakters
+- status: Lebensstatus („Alive“, „Dead“, „Unknown“)
+- species: Spezies des Charakters
+- gender: Geschlecht
+- image: Link zum Charakterbild
+- origin.name: Ursprungsort des Charakters
+
+---
+
+# Testplan
+
+| Testfall Nr | Beschreibung                           | Erwartetes Ergebnis                         | Kommentar                                           |
+|-------------|-------------------------------------|--------------------------------------------|----------------------------------------------------|
+| Test 1      | Button zeigt korrekten Text an      | Ein Button mit dem Text „Test-Button“ ist sichtbar | Überprüft, ob die Button-Komponente korrekt rendert |
+| Test 2      | Status-Komponente zeigt 🟢 für „Alive“ | Es wird „🟢 Alive“ angezeigt                 | Prüft korrekte Emoji-Ausgabe für lebendige Charaktere |
+| Test 3      | Status-Komponente zeigt 🔴 für „Dead“ | Es wird „🔴 Dead“ angezeigt                  | Prüft korrekte Emoji-Ausgabe für tote Charaktere     |
+| Test 4      | Status-Komponente zeigt ⚪️ für unbekannten Status | Es wird „⚪️ Unknown“ angezeigt          | Stellt sicher, dass der Default-Fall funktioniert     |
+| Test 5      | Navigation zeigt Link „Home“ korrekt an | Der Link mit Text „Home“ ist in der Navigation vorhanden | Einfache Komponententest, prüft das Vorhandensein eines Links |
+
+
+## Testbeschreibung
+
+1. **Button-Komponente**  
+   - Testet, ob der Button mit dem übergebenen Text korrekt gerendert wird.  
+   - Einfacher UI-Test für Wiederverwendbarkeit.
+
+2-4. **Status-Komponente**  
+   - Prüfen, ob für unterschiedliche Statuswerte („Alive“, „Dead“, sonst) das passende Emoji und der Text angezeigt werden.  
+   - Beispiel: „🟢 Alive“, „🔴 Dead“, „⚪️ Unknown“  
+   - Simpler Logik- und Rendering-Test.
+
+5. **Navigation-Komponente**  
+   - Testet, ob der Link „Home“ in der Navigation sichtbar ist.  
+   - Nutzt React Router MemoryRouter für testfähige Umgebung.  
+   - Einfacher Test für Navigationselemente.
+
+---
+
+## Durchführung des Testplans
+
+1. **Vorbereitung der Testumgebung**  
+   - Das Projekt wurde lokal auf dem Entwicklungsrechner mit Vite und React eingerichtet.  
+   - Vitest als Test-Framework wurde installiert und konfiguriert (JSX-Unterstützung, jsdom Environment).  
+   - Die nötigen Hilfsmittel wie React Testing Library wurden hinzugefügt, um Komponenten testen zu können.
+
+2. **Erstellung der Testfälle**  
+   - Basierend auf den Anforderungen wurden fünf Testfälle definiert (siehe Testplan).  
+   - Testfälle decken einfache Komponententests (Button, Status, Navigation) ab.
+
+3. **Schreiben und Ausführen der Tests**  
+   - Für die Testfälle wurden 3 Test Files erstellt mit describe, test und passenden expect-Assertions erstellt.  
+   - Die Tests wurden einzeln ausgeführt und mit npm test oder vitest kontrolliert.  
+   - Fehler wurden analysiert und behoben (z.B. fehlende Setup-Dateien, JSX-Syntax in Tests).  
+   - Bei erfolgreichen Testläufen wurde der nächste Testfall implementiert.
+
+4. **Testwiederholung und Verifizierung**  
+   - Nach Anpassungen an der Codebasis wurden Tests erneut ausgeführt, um Regressionen auszuschließen.  
+   - Automatisierte Tests gewährleisten, dass Kernfunktionen stabil bleiben.
+
+5. **Dokumentation der Testergebnisse**  
+   - Testergebnisse wurden protokolliert, inklusive Status (bestanden/nicht bestanden).  
+   - Screenshots oder Konsolenausgaben können bei Bedarf als Nachweis gespeichert werden.  
+   - Die einfache Struktur der Tests ermöglicht schnelle Nachvollziehbarkeit der Testergebnisse.
+
