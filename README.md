@@ -73,3 +73,4 @@ Als Nutzer will ich, einfach zwischen den Seiten navigieren können, damit ich d
 • Fehlerhandling und Validierung bei Benutzereingaben (z.B. bei Favoritenverwaltung)  
 • Anzeige eines Impressums als statische Informationsseite
 
+![Klassendiagramm Pages](docs/images/Klassendiagramm-Pages.png)
