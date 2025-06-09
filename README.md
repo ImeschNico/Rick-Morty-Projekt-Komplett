@@ -202,3 +202,10 @@ Die API liefert JSON-Objekte mit Eigenschaften wie Name, Status, Spezies, Geschl
    - Screenshots oder Konsolenausgaben können bei Bedarf als Nachweis gespeichert werden.  
    - Die einfache Struktur der Tests ermöglicht schnelle Nachvollziehbarkeit der Testergebnisse.
 
+---
+
+## Dokumentation der Testfälle:
+
+## Testfall 1:
+
+
