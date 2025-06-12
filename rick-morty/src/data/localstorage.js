@@ -1,4 +1,5 @@
 const FAVORITES_KEY = "favoriteChar"; //Schlüssel für Favoriten
+const STORAGE_KEY = "myChars"; //Schlüssel für eigene Cahraktere
 
 // Favoriten speichern
 export const saveFavoriteChar = (favorites) => {
@@ -47,4 +48,14 @@ export const deleteFavoriteChar = (charId) => {
     console.error("Fehler beim Löschen:", error);
     return loadFavoriteChar(); // Bei Fehler ursprüngliche Liste zurückgeben
   }
+};
+
+//Eigene Charaktere hinzufügen
+export const saveToLocalStorage = (data) => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+};
+
+export const loadFromLocalStorage = () => {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return data ? JSON.parse(data) : [];
 };

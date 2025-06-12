@@ -7,6 +7,7 @@ export const Navigation = () => {
       <Link to="/chars">Charaktere</Link>
       <Link to="/game">Game</Link>
       <Link to="/favors">Favoriten</Link>
+      <Link to="/add">My Characters</Link>
       <Link to="/impressum">Impressum</Link>
     </nav>
   );
