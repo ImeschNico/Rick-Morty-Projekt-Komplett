@@ -54,7 +54,7 @@ Als Fan der Serie Rick & Morty, will ich spielerisch meine Lieblingscharaktere a
 ### User Story 3:  
 Als Nutzer will ich, einfach zwischen den Seiten navigieren können, damit ich die App intuitiv nutzen kann.  
 **Akzeptanzkriterien:**  
-- Eine Navigationsgeräte oder ein Header ist auf allen Seiten zu sehen  
+- Eine Navigation oder ein Header ist auf allen Seiten zu sehen  
 - Ein Klick auf Charaktere zeigt sie Seite mit den Charakteren  
 - Ein Klick auf Game zeigt die Seite mit dem Spiel  
 - Ein Klick auf Favoriten zeigt alle Favoriten
@@ -66,12 +66,29 @@ Als Nutzer will ich, einfach zwischen den Seiten navigieren können, damit ich d
 
 ---
 
+### User Story 4:  
+Als Nutzer will ich, einen eigenen Charakter erstellen, bearbeiten und anzeigen lassen, damit ich meine individuellen Charakter verwalten kann
+**Akzeptanzkriterien:**  
+- Unter dem Punkt MyCharacters kann man eigene Charaktere erstellen  
+- Ein Klick auf Hinzufügen erstellt einen Charakter  
+- Beim Punkt Charaktere werden die eigenen Charakater angezeigt 
+- Ein Klick auf Löschen entfernt den eigenen Charakter
+- Ein Klick auf bearbeiten editiert den Charakter
+  
+**Definition of Done:**  
+- Alle Akzeptanzkriterien wurden erfüllt  
+- Der Code wurde überprüft  
+- MyCharacters ist in der finalen Version vorhanden
+
+---
+
 ## Funktionale Kernaufgaben:
 • Darstellung von Charakterdaten aus einer externen API  
 • Navigation zwischen verschiedenen Screens (Routing)  
 • CRUD-Funktionalität für Favoriten (Hinzufügen und Entfernen von Lieblingscharakteren)  
 • Fehlerhandling und Validierung bei Benutzereingaben (z.B. bei Favoritenverwaltung)  
 • Anzeige eines Impressums als statische Informationsseite
+• Erstellen, Anzeigen und bearbeiten von eigenen Charakteren
 
 ---
 
