@@ -67,7 +67,7 @@ Als Nutzer will ich, einfach zwischen den Seiten navigieren können, damit ich d
 ---
 
 ### User Story 4:  
-Als Nutzer will ich, einen eigenen Charakter erstellen, bearbeiten und anzeigen lassen, damit ich meine individuellen Charakter verwalten kann
+Als Nutzer will ich, einen eigenen Charakter erstellen, bearbeiten und anzeigen lassen, damit ich meine individuellen Charakter verwalten kann.
 **Akzeptanzkriterien:**  
 - Unter dem Punkt MyCharacters kann man eigene Charaktere erstellen  
 - Ein Klick auf Hinzufügen erstellt einen Charakter  
