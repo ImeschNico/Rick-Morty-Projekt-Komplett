@@ -106,7 +106,6 @@ Als Nutzer will ich, einen eigenen Charakter erstellen, bearbeiten und anzeigen 
 
 ![Klassendiagramm-zusammen](rick-morty/public/docs/images/Klassendiagramm-zusammen.png)
 
-
 ---
 
 ## Storyboard:
@@ -114,8 +113,6 @@ Als Nutzer will ich, einen eigenen Charakter erstellen, bearbeiten und anzeigen 
 ### StoryBoard:
 
 ![StoryBoard](rick-morty/public/docs/images/StoryBoard.png)
-
----
 
 ### StoryBoard-MyCharacters:
 
