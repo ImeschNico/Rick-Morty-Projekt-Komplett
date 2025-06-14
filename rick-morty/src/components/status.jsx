@@ -1,6 +1,8 @@
 export const Status = ({ status }) => {
   const getEmoji = () => {
-    switch (status) {
+    switch (
+      status //Checck welcher Status aktiv ist
+    ) {
       case "Alive":
         return "🟢";
       case "Dead":
