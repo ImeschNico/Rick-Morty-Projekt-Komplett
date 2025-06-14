@@ -117,7 +117,7 @@ Als Nutzer will ich, einen eigenen Charakter erstellen, bearbeiten und anzeigen 
 
 ---
 
-### StoryBoard:
+### StoryBoard-MyCharacters:
 
 ![StoryBoard-MyCharacters](rick-morty/public/docs/images/Storyboard-MyChar.png)
 
