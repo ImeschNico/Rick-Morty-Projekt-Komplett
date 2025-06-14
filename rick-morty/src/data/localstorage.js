@@ -6,7 +6,9 @@ export const saveFavoriteChar = (favorites) => {
   try {
     // JavaScript-Array zu JSON-String konvertieren
     const jsonString = JSON.stringify(favorites);
+    //JSON string speichern unter dem festen KEY
     localStorage.setItem(FAVORITES_KEY, jsonString);
+    //Console log zur kontrolle
     console.log("Favoriten gespeichert:", favorites.length);
   } catch (error) {
     console.error("Fehler beim Speichern:", error);
@@ -52,10 +54,14 @@ export const deleteFavoriteChar = (charId) => {
 
 //Eigene Charaktere hinzufügen
 export const saveToLocalStorage = (data) => {
+  //Daten eigener Chars in ein JSON String umwandeln und speichern
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 };
 
+//Eigene Chars aus localStorage laden
 export const loadFromLocalStorage = () => {
+  //Gespeicherste JSON string abrfuen
   const data = localStorage.getItem(STORAGE_KEY);
+  //Wenn Daten vorhanden zurück un ein Array umwadneln sonst leeres array
   return data ? JSON.parse(data) : [];
 };

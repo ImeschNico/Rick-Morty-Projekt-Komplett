@@ -10,6 +10,7 @@ export const Game = () => {
   const [error, setError] = useState(null); //State für Error
 
   //Funktion um ein zufälligen Char zu Laden
+  //async = asynchrone Operation nutzen. Dinge die noch nicht fertig sind
   const loadNewChar = async () => {
     setLoading(true);
     try {
