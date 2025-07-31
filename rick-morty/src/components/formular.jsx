@@ -27,6 +27,34 @@ export const Formular = ({ formData, handleChange, handleAddchar }) => {
         <option value="Unknown">Unbekannt</option>
       </select>
 
+      <select name="gender" value={formData.gender} onChange={handleChange}>
+        <option value="">-- Geschlecht wählen (optional) --</option>
+        <option value="männlich">Männlich</option>
+        <option value="weiblich">Weiblich</option>
+        <option value="geschlechtslos">Geschlechtslos</option>
+        <option value="unbekannt">Unbekannt</option>
+        {/* Falls "egal" gewünscht, dann z.B. geschlechtslos oder unbekannt verwenden */}
+      </select>
+
+      <select name="origin" value={formData.origin} onChange={handleChange}>
+        <option value="">Herkunft wählen</option>
+        <option value="erde (c-137)">Erde (C-137)</option>
+        <option value="erde (ersatz-dimension)">Erde (Ersatz-Dimension)</option>
+        <option value="zitadelle der ricks">Zitadelle der Ricks</option>
+        <option value="galaktisches föderationsgefängnis">
+          Galaktisches Föderationsgefängnis
+        </option>
+      </select>
+
+      <select name="species" value={formData.species} onChange={handleChange}>
+        <option value="">Spezies wählen</option>
+        <option value="mensch">Mensch</option>
+        <option value="alien">Alien</option>
+        <option value="roboter">Roboter</option>
+        <option value="tier">Tier</option>
+        <option value="mutant">Mutant</option>
+      </select>
+
       <input
         name="image" //Name des Feldes
         placeholder={placeholder} //PLatzhalter Bild

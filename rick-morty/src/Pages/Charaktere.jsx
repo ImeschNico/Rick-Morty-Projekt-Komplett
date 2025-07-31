@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { fetchCharacters } from "../data/api";
+import { fetchAllCharacters } from "../data/api";
 import { Button } from "../components/button";
 import { Status } from "../components/status";
-import { loadFromLocalStorage } from "../data/localstorage";
 import platzhalter from "../assets/platzhalter.jpg";
 
 export const Charaktere = () => {
@@ -11,16 +10,15 @@ export const Charaktere = () => {
   const [eigeneChars, setEigeneChars] = useState([]); //State für eigene Chars
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const loadData = async () => {
       //asynchrone Funktion zu Laden der Daten
       try {
         //Versuch Daten von der API zu laden
-        const data = await fetchCharacters(page);
+        const data = await fetchAllCharacters();
         //UseState der Charaktere setten
-        setChars(data.results);
+        setChars(data);
       } catch (error) {
         //falls ein Fehler auftaucht speichern im State
         setError(error.message);
@@ -32,12 +30,6 @@ export const Charaktere = () => {
     //aufrufen der asynchronen Funktion für API call
     loadData();
     //useEffect wird ausgelöst wenn Page sich ändert
-  }, [page]);
-
-  //Eigene Chars aus dem localstorage holen
-  useEffect(() => {
-    const charsFromStorage = loadFromLocalStorage();
-    setEigeneChars(charsFromStorage || []); //leere Liste falls nichts gespichert
   }, []);
 
   //Kombination aus eigenen und API chars zum zusammen anzeigen

@@ -1,28 +1,98 @@
-import axios from "axios";
+// api.js
 
-//Basis URL der API
-export const BASE_URL = "https://rickandmortyapi.com/api";
+const BASE_URL = "http://localhost:8080/api/characters"; // Backend-URL
 
-//Holt eine Seite mit Char (max 20 pro Seite)
-export const fetchCharacters = async (page = 1) => {
+export async function fetchAllCharacters() {
+  const response = await fetch(`${BASE_URL}/all`);
+  if (!response.ok) throw new Error("Fehler beim Laden der Charaktere");
+  return response.json();
+}
+
+export async function fetchRandomCharakter() {
+  const response = await fetch(`${BASE_URL}/random`);
+  if (!response.ok)
+    throw new Error("Fehler beim Laden des zufälligen Charakters");
+  return response.json();
+}
+
+export async function fetchCharacterById(id) {
+  const response = await fetch(`${BASE_URL}/${id}`);
+  if (!response.ok) throw new Error("Charakter nicht gefunden");
+  return response.json();
+}
+
+export async function createCharacter(characterDTO) {
+  const response = await fetch(`${BASE_URL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(characterDTO),
+  });
+  if (!response.ok) throw new Error("Fehler beim Erstellen des Charakters");
+  return response.json();
+}
+
+export async function updateCharacter(id, characterDTO) {
+  const response = await fetch(`${BASE_URL}/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(characterDTO),
+  });
+  if (!response.ok) throw new Error("Fehler beim Aktualisieren des Charakters");
+  return response.json();
+}
+
+export async function deleteCharacter(id) {
+  const response = await fetch(`${BASE_URL}/${id}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) throw new Error("Fehler beim Löschen des Charakters");
+  return true;
+}
+
+//---------------------------------------------
+//Favoriten URL
+const FAVORITEN_URL = `${BASE_URL}/favoriten`;
+
+export async function fetchAllFavoriten() {
+  const response = await fetch(FAVORITEN_URL);
+  if (!response.ok) throw new Error("Fehler beim Laden der Favoriten");
+  return response.json();
+}
+
+export async function createFavorit(favoritDTO) {
+  const response = await fetch(FAVORITEN_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(favoritDTO),
+  });
+  if (!response.ok) throw new Error("Fehler beim Erstellen des Favoriten");
+  return response.json();
+}
+
+export async function deleteFavorit(id) {
+  const response = await fetch(`${FAVORITEN_URL}/${id}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) throw new Error("Fehler beim Löschen des Favoriten");
+  return true;
+}
+
+const loadFavoriteChar = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/character`, {
-      params: { page: page }, // Hier werden die Seiten als Abfrage Parameter übergeben
-    });
-    return response.data;
+    const favoriten = await fetchAllFavoriten(); // <- API-Aufruf
+    console.log("Favoriten geladen:", favoriten);
+    setFavoriten(favoriten);
   } catch (error) {
-    //Error Meldung erstellen wenn nicht geladen werden kann
-    throw Error("Fehler beim Laden der Charaktere");
+    console.error("Fehler beim Laden der Favoriten:", error);
   }
 };
 
-//Holen eines random ID eines Char (ID Bereich=1-826)
-export const fetchRandomCharakter = async () => {
-  const randomId = Math.floor(Math.random() * 826) + 1; //Zufallszahl zwischen 1 und 826
-  try {
-    const response = await axios.get(`${BASE_URL}/character/${randomId}`); //Holt Char anhand der random ID
-    return response.data; //Char zurückgeben
-  } catch (error) {
-    throw Error("Fehler beim Laden eines zufälligen Charakters");
-  }
-};
+export async function saveFavoritChar(favoritDTO) {
+  const response = await fetch(FAVORITEN_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(favoritDTO),
+  });
+  if (!response.ok) throw new Error("Fehler beim Erstellen des Favoriten");
+  return await response.json();
+}

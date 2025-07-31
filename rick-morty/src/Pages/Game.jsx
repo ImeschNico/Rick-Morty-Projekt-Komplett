@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { fetchRandomCharakter } from "../data/api";
 import { Button } from "../components/button";
-import { loadFavoriteChar, saveFavoriteChar } from "../data/localstorage";
 import { Status } from "../components/status";
+import { fetchAllFavoriten } from "../data/api";
+import { saveFavoritChar } from "../data/api";
+import platzhalter from "../assets/platzhalter.jpg";
 
 export const Game = () => {
   const [char, setChar] = useState(null); //State für den aktuell angezeigten Char
   const [loading, setLoading] = useState(true); //State für Ladestatus
   const [error, setError] = useState(null); //State für Error
+  const [favoriten, setFavoriten] = useState([]);
 
   //Funktion um ein zufälligen Char zu Laden
   //async = asynchrone Operation nutzen. Dinge die noch nicht fertig sind
@@ -28,27 +31,43 @@ export const Game = () => {
   }, []);
 
   //Funktion einen Char als Fav zu speichern
-  const addToFavorites = (character) => {
-    //Favs aus localStorage laden
-    const currentFavorites = loadFavoriteChar();
+  const addToFavorites = async (character) => {
+    try {
+      const currentFavorites = await fetchAllFavoriten();
 
-    //wird nur hinzugefügt wenn noch nicht vorhanden in Fav
-    const isAlreadyFavorite = currentFavorites.some(
-      (fav) => fav.id === character.id
-    );
+      const isAlreadyFavorite = currentFavorites.some(
+        (fav) => fav.charakterId === character.id
+      );
 
-    //Wenn noch nicht in Favs in die Liste speicher
-    if (!isAlreadyFavorite) {
-      const updatedFavorites = [...currentFavorites, character];
-      saveFavoriteChar(updatedFavorites);
-      console.log(`${character.name} zu Favoriten hinzugefügt`);
-    } else {
-      console.log(`${character.name} ist bereits in Favortien`);
+      if (!isAlreadyFavorite) {
+        const dto = {
+          charakterId: character.id,
+          name: character.name,
+          status: character.status,
+          image: character.image ?? "", // fallback auf leeren String
+          species: character.species,
+          gender: character.gender,
+          origin: character.origin?.name || "Unbekannt", // ✅ String statt Objekt!
+        };
+
+        console.log("DTO wird gesendet:", dto); // Debug!
+        await saveFavoritChar(dto);
+        console.log(`${character.name} zu Favoriten hinzugefügt`);
+      } else {
+        console.log(`${character.name} ist bereits in Favoriten`);
+      }
+    } catch (error) {
+      console.error("Fehler beim Hinzufügen zu Favoriten:", error);
     }
   };
 
+  const loadFavoriteChar = async () => {
+    const data = await fetchAllFavoriten();
+    setFavoriten(data);
+  };
+
   //Funktion die aufgerufen wenn LIke oder Disslike
-  const handleVote = (choice) => {
+  const handleVote = async (choice) => {
     console.log(`Du hast ${choice} für ${char.name} gewählt`);
     if (choice === "Like") {
       addToFavorites(char); //IN Favs speichern
@@ -72,7 +91,7 @@ export const Game = () => {
               onAnswerClick={() => handleVote("Dislike")}
             />
 
-            <img className="card-img" src={char.image} alt={char.name} />
+            <img className="card-img" src={platzhalter} alt={char.name} />
             <Button
               text={"💖"}
               className="vote-button right"
@@ -90,7 +109,7 @@ export const Game = () => {
               Art: {char.species} {char.type && `(${char.type})`}
             </p>
             <p>Geschlecht: {char.gender}</p>
-            <p>Herkunft: {char.origin.name}</p>
+            <p>Herkunft: {char.origin}</p>
           </div>
         </div>
       )}

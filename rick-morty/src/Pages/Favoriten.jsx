@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from "react";
-import { loadFavoriteChar, saveFavoriteChar } from "../data/localstorage";
+
 import { Button } from "../components/button";
 import { Status } from "../components/status";
+import { fetchAllFavoriten } from "../data/api";
+import { deleteFavorit } from "../data/api";
+import platzhalter from "../assets/platzhalter.jpg";
 
 export const Favoriten = () => {
   //Zustand der Fav liste
   const [favorites, setFavorites] = useState([]);
 
-  // useEffect Hook: Lädt die Favoriten einmal beim ersten Rendern aus dem LocalStorage
-  useEffect(() => {
-    const favs = loadFavoriteChar(); //Favs aus localstorage laden
-    setFavorites(favs); //Zustand mit favs aktualisieren
-  }, []); // Leeres Array sorgt dafür, dass es nur einmal beim Mount ausgeführt wird
+  const loadFavorites = async () => {
+    try {
+      const data = await fetchAllFavoriten();
+      setFavorites(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  //Funktion zum entfernen der Chars
-  const removeFav = (char) => {
-    // Filtert den Charakter mit der passenden ID aus der Favoritenliste heraus
-    const updatedFavorites = favorites.filter((fav) => fav.id !== char.id); //eine neue Liste ohne den Charakter, den du gerade löschen möchtest.
-    setFavorites(updatedFavorites); //Zustand aktualisiert
-    saveFavoriteChar(updatedFavorites); //speichern der aktualisierten Liste wieder in localstorage
+  useEffect(() => {
+    loadFavorites();
+  }, []);
+
+  const removeFav = async (char) => {
+    try {
+      await deleteFavorit(char.id);
+      setFavorites((prev) => prev.filter((fav) => fav.id !== char.id));
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -28,7 +39,7 @@ export const Favoriten = () => {
       <div className="card-grid">
         {favorites.map((char) => (
           <div className="card" key={char.id}>
-            <img className="card-img" src={char.image} alt={char.name} />
+            <img className="card-img" src={platzhalter} alt={char.name} />
             <div className="card-content">
               <h3 className="card-title">{char.name}</h3>
               <p>
