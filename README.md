@@ -59,7 +59,7 @@ Um das Frontend mit dem Backend lauffähig zu machen, mussten folgende Punkte ü
 
 3. Frontend klonen:
 ```bash
-   git clone https://github.com/ImeschNico/Spring-Boot-Backend.git
+   git clone https://github.com/ImeschNico/Rick-Morty-Projekt-Komplett.git
 ```
 
 4. Frontend starten
