@@ -57,6 +57,8 @@ Um das Frontend mit dem Backend lauffähig zu machen, mussten folgende Punkte ü
 
 2. Backend in IntelliJ öffnen und starten (Standard-Port 8080).
 
+Detaillierterer Installationsguide im Repository [Spring-Boot-Backend](https://github.com/ImeschNico/Spring-Boot-Backend)
+
 ### Frontend starten
 
 3. Frontend klonen:
