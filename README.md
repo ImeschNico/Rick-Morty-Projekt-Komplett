@@ -57,6 +57,8 @@ Um das Frontend mit dem Backend lauffähig zu machen, mussten folgende Punkte ü
 
 2. Backend in IntelliJ öffnen und starten (Standard-Port 8080).
 
+### Frontend starten
+
 3. Frontend klonen:
 ```bash
    git clone https://github.com/ImeschNico/Rick-Morty-Projekt-Komplett.git
@@ -77,3 +79,14 @@ In das Frontend-Verzeichnis wechseln:
 ```bash
    npm run dev
 ```
+
+---
+
+## Tests, Feedback & Learnings
+
+Tests, Reflexionen und persönliche Learnings findest du in den jeweiligen Einzelprojekten:
+
+- **Frontend-Repository**: [React-Projektarbeit-Rick-Morty-Game](https://github.com/ImeschNico/React-Projektarbeit-Rick-Morty-Game)
+- **Backend-Repository**: [Spring-Boot-Backend](https://github.com/ImeschNico/Spring-Boot-Backend)
+
+Dieses Repository dient lediglich der Verbindung beider Komponenten zu einem lauffähigen Gesamtprojekt.
